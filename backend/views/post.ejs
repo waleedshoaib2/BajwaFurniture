@@ -1,0 +1,13 @@
+<!-- views/post.ejs -->
+<html>
+  <head>
+    <title><%= post.title %></title>
+  </head>
+  <body>
+    <h1><%= post.title %></h1>
+    <% if (post.image) { %>
+    <img src="<%= post.image %>" alt="<%= post.title %>" />
+    <% } %>
+    <div><%= post.content %></div>
+  </body>
+</html>

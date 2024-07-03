@@ -1,0 +1,73 @@
+.create-post-container {
+  width: 90%; /* Adjusted width for better fit */
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px; /* Reduced padding for better fit */
+  background-color: whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-post-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-field {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%; /* Ensures inputs and textareas span full width */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.react-quill {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* Ensures the react-quill editor spans full width */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.publish-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* Ensures button spans full width */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.publish-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .create-post-container {
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .create-post-container {
+    padding: 10px; /* Further reduced padding for smallest screens */
+  }
+}

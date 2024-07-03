@@ -1,0 +1,138 @@
+/* AdminChat.css */
+
+/* Message Area */
+.message-area {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar */
+.search-bar {
+  background-color: #0069f7;
+  border-radius: 20px; /* Make the search bar round */
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow around the search bar */
+}
+
+.search-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: white;
+}
+
+.chatlist ul {
+  list-style: none;
+  width: 100%;
+}
+
+.chat-item {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-item:last-child {
+  border-bottom: none;
+}
+
+.uppercorner {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.active {
+  display: none;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-icon {
+  position: relative;
+  left: 10px;
+  color: #f0f2de;
+}
+
+.chat-header {
+  font-size: 26px;
+  margin: 20px;
+  font-style: bold;
+}
+
+.chatlist {
+  background-color: white;
+  border: none; /* Remove border */
+  border-radius: 20px; /* Adjust border radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Retain shadow effect */
+  overflow: hidden;
+  /* width: 500px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.chat-item:hover, /* Apply hover effect */
+.chat-item.clicked {
+  /* Apply hover effect on click */
+  background-color: #f0f0f0; /* Change the background color */
+}
+
+.search-input-field {
+  width: calc(100% - 40px); /* Adjust based on the width of the icon */
+  padding: 5px 15px; /* Adjust padding for better appearance */
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: white;
+  border-radius: 20px; /* Ensure input field has round edges */
+  background: transparent;
+  /* Ensure background is transparent to see icon */
+}
+/* Adjust icon size if needed */
+.search-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Distance between username and last message */
+.flex-grow-1.ms-3 {
+  margin-left: 20px;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.uppercorner {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px; /* Adjust the size of the circle */
+  height: 40px; /* Adjust the size of the circle */
+  border-radius: 50%; /* Create a circle */
+  background-color: #0069f7; /* Set the background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-avatar svg {
+  color: white; /* Set the color of the user icon */
+}
+
+.username {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #333333;
+}

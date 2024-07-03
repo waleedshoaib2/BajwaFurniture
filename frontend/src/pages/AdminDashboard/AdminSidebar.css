@@ -1,0 +1,95 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  width: 50%;
+}
+
+.admin-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.admin-logo img {
+  height: 40px; /* Adjust height as needed */
+  margin-right: 20px; /* Add some spacing between logo and search */
+}
+
+.admin-search input {
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-icons {
+  display: flex;
+  align-items: center;
+}
+
+.admin-icons > svg {
+  margin-left: 10px;
+}
+
+.admin-sidebar {
+  background-color: black;
+  color: #fff;
+  padding: 80.3px;
+  width: 100%;
+  flex: 1; /* Fill remaining space */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+}
+
+.admin-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-sidebar ul li a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+.admin-sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.black-button {
+  height: 55px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  font-size: medium;
+  font-weight: 500;
+  color: #fff;
+  background-color: black;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.black-button:hover {
+  background-color: #333;
+}
+
+.black-button > svg {
+  margin-right: 10px; /* Add some space between the icon and the text */
+}
+
+/* .admin-header {
+  height: 50px;
+} */

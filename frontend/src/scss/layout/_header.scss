@@ -1,0 +1,93 @@
+@use "../abstracts" as *;
+
+.header {
+  position: fixed; /* Add this */
+  top: 0; /* Add this */
+  z-index: 100; /* Add this */
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  margin-bottom: 80px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__account-text {
+    width: 25px;
+    margin: 0 5px;
+    font-size: large;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include breakpoint(sm) {
+      font-size: smaller;
+      width: 35px;
+    }
+
+    @include breakpoint(md) {
+      font-size: small;
+      width: 45px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: medium;
+      width: 75px;
+    }
+  }
+}
+
+.navigation-text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: x-small;
+  font-weight: 600;
+  color: black;
+  margin: 0px 6px;
+  // cursor: pointer;
+  position: relative;
+
+  &:first-of-type {
+    margin-left: 20px;
+  }
+
+  @include breakpoint("sm") {
+    font-size: small;
+    margin: 0px 10px;
+  }
+
+  @include breakpoint("md") {
+    font-size: medium;
+    margin: 0px 15px;
+  }
+
+  @include breakpoint("lg") {
+    font-size: medium;
+    margin: 0px 20px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0px;
+    background-color: $colors-black;
+    transition: height 0.1s ease-in-out;
+  }
+
+  &:hover::after {
+    height: 2px;
+  }
+}
+.logo-bf {
+  height: 160px;
+  width: 160px;
+}

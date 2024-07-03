@@ -1,0 +1,125 @@
+import {
+  resetUserState,
+  loginRequest,
+  loginSuccess,
+  loginFailed,
+  userLogout,
+  registerRequest,
+  registerSuccess,
+  registerFailed,
+  updateInfoRequest,
+  updateInfoSuccess,
+  updateInfoFailed,
+} from "../slices/userSlice";
+import { baseURL } from "../../lib/axiosAPI";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+export const login = (email, password) => {
+  return async (dispatch) => {
+    try {
+      dispatch(resetUserState());
+      dispatch(loginRequest());
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const { data } = await axios.post(
+        `http://localhost:4000/user/login`,
+        { email, password },
+        config
+      );
+      console.log(data);
+      dispatch(loginSuccess(data));
+      localStorage.setItem("userInfo", JSON.stringify(data));
+    } catch (error) {
+      dispatch(
+        loginFailed(
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+        )
+      );
+    }
+  };
+};
+
+export const logout = () => {
+  return (dispatch) => {
+    localStorage.removeItem("userInfo");
+    dispatch(resetUserState());
+    dispatch(userLogout());
+  };
+};
+export const register = (
+  name,
+  email,
+  password,
+  phoneNumber,
+  address,
+  subscribeNewsletter
+) => {
+  return async (dispatch) => {
+    try {
+      dispatch(resetUserState());
+      dispatch(registerRequest());
+
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const { data } = await axios.post(
+        `http://localhost:4000/user/signup/`,
+        { name, email, password, phoneNumber, address, subscribeNewsletter },
+        config
+      );
+
+      dispatch(registerSuccess(data));
+    } catch (error) {
+      dispatch(
+        registerFailed(
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+        )
+      );
+    }
+  };
+};
+
+export const updateUserInfo = (user) => {
+  return async (dispatch) => {
+    try {
+      dispatch(resetUserState());
+      dispatch(updateInfoRequest());
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+      const { data } = await axios.put(
+        `http://localhost:4000/user/update`,
+        config
+      );
+      dispatch(updateInfoSuccess(data));
+      localStorage.setItem("userInfo", JSON.stringify(data));
+    } catch (error) {
+      if (error.response.status === 401) {
+        dispatch(updateInfoFailed("Please Login again"));
+        dispatch(logout());
+      } else {
+        dispatch(
+          updateInfoFailed(
+            error.response && error.response.data.message
+              ? error.response.data.message
+              : error.message
+          )
+        );
+      }
+    }
+  };
+};
