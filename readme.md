@@ -1,6 +1,6 @@
 # Bajwa Furniture
 
-Bajwa Furniture is a full-fledged online furniture store built using the MERN stack. The project features an integrated Stripe payment system for secure transactions, a blog management system utilizing Gemini API keys, a visual search engine powered by TensorFlow's MobileNet model, a recommendation system, and a blog system using React Uill.
+Bajwa Furniture is a full-fledged online furniture store built using the MERN stack. The project features an integrated Stripe payment system for secure transactions, a blog management system utilizing Gemini API keys, a visual search engine powered by TensorFlow's MobileNet model, a recommendation system, and a blog system using react quill
 
 ## Features
 
